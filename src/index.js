@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Use Routes instead of Switch
+import { HashRouter as Router } from 'react-router-dom';  // Use Routes instead of Switch
 import './index.css';
 import App from './App';  // Import PdfGenerator (renamed to App) properly
 import UserInput from './UserInput';  // Your form page
