@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Use Routes instead of Switch
 import './index.css';
-import App from './App';
+import App from './App';  // Import PdfGenerator (renamed to App) properly
+import UserInput from './UserInput';  // Your form page
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>  {/* Use Routes instead of Switch */}
+        <Route path="/" element={<UserInput />} />  {/* Route for the input form page */}
+        <Route path="/generate-pdf" element={<App />} />  {/* Route for the PDF generation page */}
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// For reporting web vitals
 reportWebVitals();
